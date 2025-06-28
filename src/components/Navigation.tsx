@@ -18,7 +18,7 @@ export const Navigation = () => {
     <nav
       className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 
              w-[90%] max-w-5xl backdrop-blur-md bg-white/10 
-             border border-white/20 shadow-xl rounded-full
+             border border-white/20 shadow-xl rounded-full sm: rounded-lg
              text-warm-sand"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

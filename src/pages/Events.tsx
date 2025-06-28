@@ -1,7 +1,6 @@
-
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, MapPin, Clock } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calendar, MapPin, Clock, Youtube, Spotify } from "lucide-react";
 
 const Events = () => {
   const upcomingEvents = [
@@ -11,11 +10,14 @@ const Events = () => {
       date: "June 29, 2025",
       time: "2:00 PM - 5:00 PM",
       location: "PCEA Highway Church",
-      address: "QWR7+PVP, D. O's Rd, Githurai",
+      address: "QWR7+PVP, D.O's Rd, Githurai",
       description:
         "Join us for 'Grace [to Speak]' worship experience, where we explore how God's grace empowers us to speak truth with love and compassion. This afternoon will feature worship songs and a powerful message on God's GRACE.",
       rsvpLink:
         "https://docs.google.com/forms/d/e/1FAIpQLSez68wjjy___r2djjh1d-GUTRDphBZLGwjkZw0a5X9KxQzDuw/viewform?usp=header",
+      youtube:
+        "https://youtube.com/playlist?list=PLsWEoNTspo8yoveiAv5ZaPQirOqhWIRLo",
+      spotify: "https://open.spotify.com/playlist/4V7YZIouHJkLNJJqTqvcF0",
       featured: true,
     },
   ];
@@ -52,9 +54,7 @@ const Events = () => {
               <Card
                 key={event.id}
                 className={`${
-                  event.featured
-                    ? "bg-grace-gold/10 border-grace-gold"
-                    : "bg-white/60"
+                  event.featured ? "bg-grace-gold/10" : "bg-white/60"
                 } shadow-lg hover:shadow-xl transition-shadow duration-300`}
               >
                 <CardHeader>
@@ -104,10 +104,29 @@ const Events = () => {
                   <p className="text-olive-charcoal/80 leading-relaxed mb-4">
                     {event.description}
                   </p>
-                  <div className="bg-white/50 rounded-lg p-4">
-                    <p className="text-sm text-olive-charcoal/70">
-                      <strong>Address:</strong> {event.address}
-                    </p>
+                  <div>
+                    {(event.youtube || event.spotify) && (
+                      <div className="mt-6 flex flex-col sm:flex-row gap-4">
+                        {event.youtube && (
+                          <Button
+                            variant="outline"
+                            className="text-red-600 border-red-600 hover:bg-red-600 hover:text-white"
+                            onClick={() => window.open(event.youtube, "_blank")}
+                          >
+                            Watch Playlist on YouTube
+                          </Button>
+                        )}
+                        {event.spotify && (
+                          <Button
+                            variant="outline"
+                            className="text-green-600 border-green-600 hover:bg-green-600 hover:text-white"
+                            onClick={() => window.open(event.spotify, "_blank")}
+                          >
+                            Listen on Spotify
+                          </Button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
