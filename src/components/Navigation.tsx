@@ -1,22 +1,26 @@
-
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Events', path: '/events' },
-    { name: 'Music', path: '/music' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Events", path: "/events" },
+    { name: "Music", path: "/music" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav className="bg-olive-charcoal text-warm-sand shadow-lg sticky top-0 z-50">
+    <nav
+      className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 
+             w-[90%] max-w-5xl backdrop-blur-md bg-white/10 
+             border border-white/20 shadow-xl rounded-3xl 
+             text-warm-sand"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -34,10 +38,10 @@ export const Navigation = () => {
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-grace-gold",
+                  "px-3 py-2 text-md font-medium transition-colors duration-200 hover:text-grace-gold",
                   location.pathname === item.path
                     ? "text-grace-gold border-b-2 border-grace-gold"
-                    : "text-warm-sand"
+                    : "text-grace-gold"
                 )}
               >
                 {item.name}

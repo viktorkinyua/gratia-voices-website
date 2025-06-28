@@ -10,7 +10,7 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-start relative overflow-hidden animate-fade-in bg-cover bg-center bg-no-repeat bg-[url('/images/hero.jpeg')]">
         <div className="absolute inset-0 backdrop-blur-sm bg-white/2 p-8 rounded-md"></div>
         <div className="relative z-10 w-full max-w-3xl pl-0 pr-4 md:pl-24 py-4 animate-fade-in">
-          <h1 className="text-5xl md:text-8xl font-playfair font-bold text-grace-gold">
+          <h1 className="text-5xl md:text-8xl font-playfair font-bold text-grace-gold pl-4">
             Gratia Voices
           </h1>
           <p className="text-3xl md:text-3xl font-dancing text-white/75 mb-8">
@@ -21,13 +21,13 @@ const Index = () => {
             anything we have done but because of his own purpose and grace." - 2
             Timothy 1:9
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 ">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               asChild
               size="lg"
               className="bg-grace-gold hover:bg-grace-gold/90 text-white"
             >
-              <Link to="/events">Upcoming Events</Link>
+              <Link to="/events">Upcoming Event</Link>
             </Button>
             <Button
               asChild
