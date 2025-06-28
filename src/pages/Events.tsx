@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, MapPin, Clock, Youtube, Spotify } from "lucide-react";
+import { Calendar, MapPin, Clock, } from "lucide-react";
 
 const Events = () => {
   const upcomingEvents = [
